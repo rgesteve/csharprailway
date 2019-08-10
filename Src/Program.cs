@@ -10,6 +10,14 @@ namespace roptry
 {
     class Program
     {
+
+	private static readonly OrderShipped SafeEvt = new OrderShipped
+	{
+	  OrderId = 1,
+	  ShippingType = ShippingType.Standard
+	};
+
+	// Problem: Teleportation not yet cracked!
 	private static readonly OrderShipped InvalidEvt = new OrderShipped
 	{
 	  OrderId = 2,
@@ -19,7 +27,7 @@ namespace roptry
         static void Main(string[] args)
         {
 	    Handle<V1.V1Registry>(InvalidEvt);
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Done!");
         }
 
 	private static void Handle<T>(OrderShipped evt) where T: Registry, new()

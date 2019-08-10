@@ -1,10 +1,23 @@
+using System;
+
 namespace roptry.Domain
 {
-/*
+
   public class SalesOrder : IPersisted
   {
+	public SalesOrder(string orderNumber, DateTime? orderPickDate, Customer customer)
+	{
+		OrderNumber = orderNumber;
+		OrderPickDate = orderPickDate;
+		Customer = customer;
+	}
+
+	public int Id                  { get; set; }
+	public string OrderNumber      { get; private set; }
+	public DateTime? OrderPickDate { get; private set; }
+	public Customer Customer       { get; private set; }
   }
-  */
+
 
   public class Customer
   {
