@@ -7,6 +7,20 @@ namespace roptry.Rop
 	public static class ResultExtensions
 	{
 		/**
+		*/
+		public static void Handle<TSuccess, TFailure>
+		(this Result<TSuccess, TFailure> result,
+		 Action<TSuccess> onSuccess,
+		 Action<TFailure> onFailure)
+		{
+			if (result.IsSuccess) {
+			  onSuccess(result.Success);
+			} else {
+			  onFailure(result.Failure);
+			}
+		}
+	
+		/**
 		`Either` takes two callbacks, one to be dispatch on success, the other
 		on failure.  Think nodejs-style  continuation handling.
 		*/

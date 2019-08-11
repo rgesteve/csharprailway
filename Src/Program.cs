@@ -26,8 +26,10 @@ namespace roptry
 	
         static void Main(string[] args)
         {
-	    Handle<V1.V1Registry>(SafeEvt);
+	    // Handle<V1.V1Registry>(SafeEvt);
 	    // Handle<V1.V1Registry>(InvalidEvt);
+	    // Handle<V4.V4Registry>(SafeEvt);
+    	    Handle<V4.V4Registry>(InvalidEvt);
             Console.WriteLine("Done!");
         }
 
