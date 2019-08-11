@@ -58,7 +58,20 @@ namespace Tests
 	   var failure = Result<int, int[]>.Failed(new []{0, 1, 2});
 	   var result = failure.ToFailure();
 
+	   // https://stackoverflow.com/questions/49128388/fluentassertions-string-does-not-contain-a-definition-for-shouldbeequivalentto
+	   // https://fluentassertions.com/introduction
+	   // https://www.continuousimprover.com/2018/02/fluent-assertions-50-best-unit-test.html
+
 	   Assert.Equal(result.Failure, failure.Failure);
+	}
+
+	[Fact]
+	public void ForceFailureTest()
+	{
+	   var success = Result<int, int[]>.Succeeded(1);
+	   var result = success.ToFailure();
+
+	   result.Should().BeEquivalentTo(Result<int, int[]>.Failed(new int[0]));
 	}
 
 
