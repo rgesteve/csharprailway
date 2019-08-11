@@ -26,7 +26,8 @@ namespace roptry
 	
         static void Main(string[] args)
         {
-	    Handle<V1.V1Registry>(InvalidEvt);
+	    Handle<V1.V1Registry>(SafeEvt);
+	    // Handle<V1.V1Registry>(InvalidEvt);
             Console.WriteLine("Done!");
         }
 
@@ -34,7 +35,7 @@ namespace roptry
 	{
 	  Ioc.Configure<T>();
 	  var handler = Ioc.Container.GetInstance<IHandler<OrderShipped>>();
-	  //handler.handle(evt);
+	  handler.Handle(evt);
 	}
     }
 }
