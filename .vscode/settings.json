@@ -1,0 +1,11 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.exclude": {
+        "obj" : true // set this to true to hide the "out" folder with the compiled JS files,
+	"bin" : true
+    },
+    "search.exclude": {
+        "obj" : true, // set this to false to include "out" folder in search results
+	"bin" : true
+    }
+}
